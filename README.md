@@ -1,15 +1,11 @@
 # 基于在线学习的异常流量实时分析系统
 
----
 
-<img title="" src="file:///C:/Users/hp/AppData/Roaming/marktext/images/2023-05-05-10-44-58-image.png" alt="" width="398">
-
-<img src="file:///C:/Users/hp/AppData/Roaming/marktext/images/2023-05-05-10-45-06-image.png" title="" alt="" width="399">
 
 ## 安装环境需求
 
----
-
+![image](https://user-images.githubusercontent.com/51851660/236371538-e27b3f0d-f19a-43b1-84b9-abb3f122c6e0.png)
+![image](https://user-images.githubusercontent.com/51851660/236371582-975a3b07-cc1e-479d-b486-b1f392d8bfb4.png)
 
 
 -  系统：Ubuntu18.04
@@ -20,7 +16,7 @@
 
 ## 数据集
 
----
+
 
 - **DARPA** 数据集[链接](http://www.11.mit.edu/ideval/data/2000/LLS_DDoS_1.0.html,2000.)
 
@@ -30,7 +26,7 @@
 
 ## 基础环境安装
 
----
+
 
 - [JDK：1.8+](https://www.runoob.com/java/java-environment-setup.html) 
 
@@ -58,15 +54,14 @@ npm config get registry
 
 ## 项目部署
 
----
 
 - 修改配置。按需修改我们的application-prod.yml，如需打Swagger，那么需要将enabled设置为true。
 
 - 打包项目。我们需要将项目打包好的Jar文件上传到服务器
-  
-  ![](C:\Users\hp\AppData\Roaming\marktext\images\2023-05-05-11-07-31-image.png)
-  
-  ![](C:\Users\hp\AppData\Roaming\marktext\images\2023-05-05-11-07-37-image.png)
+
+  ![image](https://user-images.githubusercontent.com/51851660/236371627-88c5c71e-334c-43d8-95df-db287f36c6ec.png)
+  ![image](https://user-images.githubusercontent.com/51851660/236371638-c50e7ac2-bcd9-4c8b-9956-de40b7e51db8.png)
+
 
 - 编写脚本。编写脚本用于操作java服务.
   
@@ -107,8 +102,8 @@ npm config get registry
 
 ## 主要操作方法
 
----
 
-在浏览器打开链接http://172.16.103.79:8013/，简要设置之后即可查看流量分析结果以及DDoS攻击检测。
+
+在浏览器打开[http://172.16.103.79:8013/](http://172.16.103.79:8013/)，简要设置之后即可查看流量分析结果以及DDoS攻击检测。
 
 
