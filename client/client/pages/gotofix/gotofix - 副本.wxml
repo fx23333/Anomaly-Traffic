@@ -1,0 +1,4 @@
+<!--pages/gotofix/gotofix.wxml-->
+<image src="/image/ex.png" alt="" class="img"></image>
+
+<button>开始维修</button>

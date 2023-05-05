@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/details/details",
+    "pages/gotofix/gotofix"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "navigationBarTitleText": "易电通",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "告警",
+      "iconPath": "/image/(796).png",
+      "selectedIconPath": "/image/(781).png"
+    },
+    {
+      "pagePath": "pages/personal/personal",
+      "text": "我的",
+      "iconPath": "/image/(962).png",
+      "selectedIconPath": "/image/(936).png"
+    }]
+  }
+}

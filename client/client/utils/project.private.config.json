@@ -1,0 +1,35 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/personal/personal",
+                    "pathName": "pages/personal/personal",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/details/details",
+                    "pathName": "pages/details/details",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/gotofix/gotofix",
+                    "pathName": "pages/gotofix/gotofix",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

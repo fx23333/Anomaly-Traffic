@@ -1,0 +1,5 @@
+/* pages/gotofix/gotofix.wxss */
+
+.img {
+    width: 100%;
+}

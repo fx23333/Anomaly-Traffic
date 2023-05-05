@@ -1,0 +1,22 @@
+<!--pages/details/details.wxml-->
+<view class='cell'>
+    <view class='cell-item'>
+        <text>告警信息</text>
+        <view class="main">
+            <text>维修编号：001</text>
+            <text>电线杆编号：000001</text>
+            <text>电线杆位置：燕山大学图书馆</text>
+            <text>告警时间：2021-03-23 14:12:33</text>
+        </view>
+    </view>
+    <view class='cell-item'>
+        <text>传感器数值</text>
+        <view class="main">
+            <text>温度：30℃</text>
+            <text>x轴加速度：85</text>
+            <text>y轴加速度：45</text>
+            <text>z轴加速度：1185</text>
+        </view>
+    </view>
+    <button bindtap="gotofix">前往维修</button>
+</view>

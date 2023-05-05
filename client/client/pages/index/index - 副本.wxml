@@ -1,0 +1,14 @@
+<view class="top">待维修</view>
+<navigator class="cell" wx:for="{{indexList}}" wx:key="number" url="/pages/details/details?id={{item.id}}">
+    <view class="cell-item">
+        <view class="circle"></view>
+        <view>维修编号：{{item.number}}</view>
+        <view class="content-main">
+            <image src="{{item.avatar}}"></image>
+            <view class="content-info">
+                <view>电线杆编号：{{item.id}}</view>
+                <view>损坏程度：{{item.degree}}</view>
+            </view>
+        </view>
+    </view>
+</navigator>

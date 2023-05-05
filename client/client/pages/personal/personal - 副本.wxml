@@ -1,0 +1,18 @@
+<view class="avatar center">
+    <image src='/image/avatar.png'></image>
+</view>
+<view class='divider'></view>
+<view class='cell'>
+    <navigator class='cell-item arrow'>
+        <text>正在维修</text>
+    </navigator>
+    <navigator class='cell-item arrow'>
+        <text>维修历史</text>
+    </navigator>
+</view>
+<view class='divider'></view>
+<view class='cell'>
+    <navigator class='cell-item arrow'>
+        <text>设置</text>
+    </navigator>
+</view>
