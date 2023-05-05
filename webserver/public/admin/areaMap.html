@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>易电网</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/bootstrap-validator/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="assets/nprogress/nprogress.css"/>
+    <link rel="stylesheet" href="css/admin.css"/>
+    <style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body>
+<!--侧边栏-->
+<aside class="ad_aside">
+    <!--商标-->
+    <div class="brand"><a href="index.html"><img src="images/logoimg.PNG" class ="indexlogo" alt=""></a></div>
+    <!--用户-->
+    <div class="user">
+        <img src="images/default.png" alt=""/>
+        <span>超级管理员</span>
+    </div>
+    <!--菜单-->
+    <div class="menu">
+        <ul>
+            <li><a href="userManage.html"><span class="glyphicon glyphicon-user"></span> 系统管理</a></li>
+            <li>
+                <a href="javascript:;"><span class="glyphicon glyphicon-list"></span> 数据显示</a>
+                <div class="child" style="display: none">
+                    <a href="categoryFirst.html">损坏趋势图（折线图）</a>
+                    <a href="categorySecond.html">告警数量统计图（柱状图）</a>
+                    <a href="categoryThird.html">损坏比例图（饼状图）</a>
+                    <a href="categoryFourth.html">维修成品统计</a>
+                </div>
+            </li>
+            <li><a href="deviceState.html"><span class="glyphicon glyphicon-tags"></span> 设备状态</a></li>
+            <li><a href="productManage.html"><span class="glyphicon glyphicon-tags"></span> 人员管理</a></li>
+            <li><a href="repairManage.html"><span class="glyphicon glyphicon-tags"></span> 维修管理</a></li>
+            <li class="now"><a href="areaMap.html"><span class="glyphicon glyphicon-tags"></span> 区域图</a></li>
+        </ul>
+    </div>
+</aside>
+<!--内容-->
+<section class="ad_section">
+    <!--顶部导航-->
+    <nav class="ad_nav">
+        <a data-menu href="javascript:;"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a data-logout href="javascript:;"><span class="glyphicon glyphicon-log-out"></span></a>
+    </nav>
+    <div class="container-fluid">
+        <!--路径导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li class="active">首页</li>
+        </ol>
+        <div class="ad_content">
+             <!--百度地图容器-->
+          <div style="width:800px;height:800px;border:#ccc solid 1px;" id="dituContent"></div>
+
+        </div>
+    </div>
+</section>
+<script src="assets/jquery/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="assets/nprogress/nprogress.js"></script>
+<script src="assets/echarts/echarts.min.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addPolyline();//向地图中添加线
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(119.528198,39.918195);//定义一个中心点坐标
+        map.centerAndZoom(point,16);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+    map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+    map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+    map.addControl(ctrl_sca);
+    }
+    
+//标注线数组
+    var plPoints = [{style:"solid",weight:2,color:"#f0f",opacity:0.4,points:["119.525754|39.919578","119.525467|39.916701","119.526473|39.915511","119.523455|39.913878","119.524245|39.913076","119.527263|39.91374","119.527048|39.914957","119.529168|39.914791","119.528593|39.916341","119.527263|39.917116","119.529958|39.918084","119.529168|39.920242","119.527802|39.920906","119.52561|39.920934","119.524389|39.919855","119.525431|39.916673","119.523131|39.916673","119.523023|39.918222","119.524317|39.919827","119.523886|39.921404","119.524712|39.924088","119.526724|39.92442","119.526724|39.924392"]}
+         ];
+    //向地图中添加线函数
+    function addPolyline(){
+        for(var i=0;i<plPoints.length;i++){
+            var json = plPoints[i];
+            var points = [];
+            for(var j=0;j<json.points.length;j++){
+                var p1 = json.points[j].split("|")[0];
+                var p2 = json.points[j].split("|")[1];
+                points.push(new BMap.Point(p1,p2));
+            }
+            var line = new BMap.Polyline(points,{strokeStyle:json.style,strokeWeight:json.weight,strokeColor:json.color,strokeOpacity:json.opacity});
+            map.addOverlay(line);
+        }
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+</body>
+</html>
